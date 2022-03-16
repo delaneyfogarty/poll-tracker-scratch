@@ -1,17 +1,15 @@
 // import functions and grab DOM elements
 const form = document.querySelector('form');
 const currentPollEl = document.getElementById('current-poll');
-
-const option1NameEl = document.querySelector('option1name');
-const option1ScoreEl = document.querySelector('option1score');
-const option2NameEl = document.querySelector('option2name');
-const option2ScoreEl = document.querySelector('option2Score');
-const finishPollButton = document.getElementById('finish-poll');
-
+const currentPollDestination = document.getElementById('current-poll-destination');
+const option1VoteText = document.getElementById('option1-vote-text')
+const option2VoteText = document.getElementById('option2-vote-text')
 const option1AddButton = document.getElementById('option1-add');
 const option2AddButton = document.getElementById('option2-add');
 const option1SubButton = document.getElementById('option1-sub');
 const option2SubButton = document.getElementById('option2-sub');
+const finishPollButton = document.getElementById('finish-poll');
+
 
 const pastPollsEl = document.querySelector('past-polls');
 
@@ -69,6 +67,36 @@ finishPollButton.addEventListener('click', () => {
 	displayList();
 
 });
+
+function makePoll() {
+
+	return {
+		question: question,
+		option1Name: option1Name,
+		option2Name: option2Name,
+		option1Votes: option1Votes,
+		option2Votes: option2Votes
+	};
+}
+
+function resetState() {
+	let question = '';
+	let option1Name = '';
+	let option2Name = '';
+	let option1Votes = 0;
+	let option2Votes = 0;
+}
+
+function displayCurrentPoll() {
+	const pollEl = renderPollEl(question, option1Name, option2Name, option1Votes, option2Votes)
+
+	currentPollDestination.textContent = '';
+	currentPollDestination.append(pollEl);
+
+	option1
+
+
+}
 
 
   // get user input
