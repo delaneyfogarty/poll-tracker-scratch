@@ -17,8 +17,8 @@ const pastPollsEl = document.querySelector('past-polls');
 
 // let state
 let question = '';
-let option1Text = '';
-let option2Text = '';
+let option1Name = '';
+let option2Name = '';
 let option1Votes = 0;
 let option2Votes = 0;
 
@@ -46,7 +46,30 @@ option2SubButton.addEventListener('click', () => {
 	option2ScoreEl.textContent = option2Votes;
 });
 
-form.addEventListener
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	const data = new FormData(form);
+
+	question = data.get('question-input');
+	option1Name = data.get('option1-name');
+	option2Name = data.get('option2-name');
+
+	displayCurrentPoll();
+});
+
+finishPollButton.addEventListener('click', () => {
+	form.reset();
+
+	const poll = makePoll();
+
+	pastPollsArray.push(poll);
+
+	resetState();
+	displayCurrentPoll();
+	displayList();
+
+});
+
 
   // get user input
   // use user input to update state
