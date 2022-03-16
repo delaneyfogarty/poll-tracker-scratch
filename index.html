@@ -21,19 +21,21 @@
 	<main>
 		<section class="main-section">
 			<div class="poll-form">
-				<label>
-					Question:
-					<input class="question" />
-				</label>
-				<label>
-					Name One:
-					<input class="option1-name" />
-				</label>
-				<label>
-					Name Two:
-					<input class="option2-name" />
-				</label>
-				<button id="start-poll">Start Poll</button>
+				<form class="form">
+					<label>
+						Question:
+						<input class="question-input" />
+					</label>
+					<label>
+						Name One:
+						<input class="option1-name" />
+					</label>
+					<label>
+						Name Two:
+						<input class="option2-name" />
+					</label>
+					<button id="start-poll">Start Poll</button>
+				</form>
 			</div>
 			<div class="current-poll">
 				<h1>Current Poll:</h1>
@@ -42,24 +44,23 @@
 					<div id="option1">
 						<p id="option1name"></p>
 						<p id="option1score"></p>
+						<div id="option2">
+							<p id="option2name"></p>
+							<p id="option2score"></p>
+						</div>
+						<button id="finish-poll">Finish Poll</button>
 					</div>
-					<div id="option2">
-						<p id="option2name"></p>
-						<p id="option2score"></p>
+					<div>
+						<button id="option1-add">Good Boi Points</button>
+						<button id="option2-add">Good Boi Points</button>
 					</div>
-					<button id="finish-poll">Finish Poll</button>
+					<div>
+						<button id="option1-sub">Bad Boi Points</button>
+						<button id="option2-sub">Bad Boi Points</button>
+					</div>
 				</div>
-				<div>
-					<button id="option1-add">Good Boi Points</button>
-					<button id="option2-add">Good Boi Points</button>
+				<div class="past-polls">
 				</div>
-				<div>
-					<button id="option1-subtract">Bad Boi Points</button>
-					<button id="option2-subtract">Bad Boi Points</button>
-				</div>
-			</div>
-			<div class="past-polls">
-			</div>
 		</section>
 	</main>
 	<footer>

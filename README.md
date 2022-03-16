@@ -33,7 +33,6 @@ Additional considerations:
 1.) Div - current poll
   A. H1 for current question
   B. Div - display option1 and option 1 votes
-  C. 2 Img tags for both kitties
   C. Div - display option2 and option 2 votes
 2.) Voting buttons for option 1 (+/-) and voting buttons for option 2 (+/-)
 3.) Publish poll button
