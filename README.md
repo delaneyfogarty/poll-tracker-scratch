@@ -33,12 +33,15 @@ Additional considerations:
 1.) Div - current poll
   A. H1 for current question
   B. Div - display option1 and option 1 votes
+  C. 2 Img tags for both kitties
   C. Div - display option2 and option 2 votes
 2.) Voting buttons for option 1 (+/-) and voting buttons for option 2 (+/-)
 3.) Publish poll button
 4.) Div - current poll form
- A. Input for question
- B. Submit button
+ A. Input for question within label tag
+ B. Label inputs for option1 and option2
+ C. Submit button
+
 5.) Section for past polls
  A. H1 for question
  B. Div - display option1 and option 1 votes
