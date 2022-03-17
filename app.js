@@ -88,16 +88,24 @@ function resetState() {
 }
 
 function displayCurrentPoll() {
-	const pollEl = renderPollEl(question, option1Name, option2Name, option1Votes, option2Votes)
-
 	currentPollDestination.textContent = '';
 
 	option1VoteText.textContent = option1Name;
 	option2VoteText.textContent = option2Name;
 
+	const pollEl = renderPollEl(question, option1Name, option2Name, option1Votes, option2Votes);
+
+	pollEl.classList.add('current');
 	currentPollDestination.append(pollEl);
 }
 
+function displayAllPolls() {
+	pastPollsArray.textContent = '';
+
+	for (let poll of pastPollEl) {
+		const pollsEl = renderP
+	}
+}
 
   // get user input
   // use user input to update state
