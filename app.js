@@ -49,9 +49,11 @@ form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const data = new FormData(form);
 
+	
 	question = data.get('question-input');
 	option1Name = data.get('option1-name');
 	option2Name = data.get('option2-name');
+
 
 	displayCurrentPoll();
 });
@@ -91,12 +93,12 @@ function resetState() {
 function displayCurrentPoll() {
 	currentPollDestination.textContent = '';
 
-	option1VoteText.textContent = option1Name;
-	option2VoteText.textContent = option2Name;
+	//option1VoteText.textContent = option1Name;
+	//option2VoteText.textContent = option2Name;
 
 	const pollEl = renderPoll(question, option1Name, option2Name, option1Votes, option2Votes);
 
-	pollEl.classList.add('current');
+	//pollEl.classList.add('current');
 	currentPollDestination.append(pollEl);
 }
 
@@ -105,7 +107,7 @@ function displayAllPolls() {
 
 	for (let poll of pastPollsEl) {
 		const pollsEl = renderPoll(poll.question, poll.option1Name, poll.option2Name, poll.option1Votes, poll.option2Votes);
-		pollsEl.classList.add('current');
+		//pollsEl.classList.add('current');
 		pastPollsEl.append(pollsEl);
 	}
 }
