@@ -1,9 +1,10 @@
 // import functions and grab DOM elements
+import { renderPoll } from './render-utils.js';
+
 const form = document.querySelector('form');
-const currentPollEl = document.getElementById('current-poll');
 const currentPollDestination = document.getElementById('current-poll-destination');
-const option1VoteText = document.getElementById('option1-vote-text')
-const option2VoteText = document.getElementById('option2-vote-text')
+const option1VoteText = document.getElementById('option1-vote-text');
+const option2VoteText = document.getElementById('option2-vote-text');
 const option1AddButton = document.getElementById('option1-add');
 const option2AddButton = document.getElementById('option2-add');
 const option1SubButton = document.getElementById('option1-sub');
@@ -25,23 +26,23 @@ const pastPollsArray = [];
 // set event listeners 
 option1AddButton.addEventListener('click', () => {
 	option1Votes++;
-	option1ScoreEl.textContent = option1Votes;
+	displayCurrentPoll();
 
 });
 
 option2AddButton.addEventListener('click', () => {
-	option2Votes++:
-	option2ScoreEl.textContent = option2Votes;
+	option2Votes++;
+	displayCurrentPoll();
 });
 
 option1SubButton.addEventListener('click', () => {
-	option1Votes--
-	option1ScoreEl.textContent = option1Votes;
+	option1Votes--;
+	displayCurrentPoll();
 });
 
 option2SubButton.addEventListener('click', () => {
 	option2Votes--;
-	option2ScoreEl.textContent = option2Votes;
+	displayCurrentPoll();
 });
 
 form.addEventListener('submit', (e) => {
@@ -80,11 +81,11 @@ function makePoll() {
 }
 
 function resetState() {
-	let question = '';
-	let option1Name = '';
-	let option2Name = '';
-	let option1Votes = 0;
-	let option2Votes = 0;
+	question = '';
+	option1Name = '';
+	option2Name = '';
+	option1Votes = 0;
+	option2Votes = 0;
 }
 
 function displayCurrentPoll() {
@@ -93,7 +94,7 @@ function displayCurrentPoll() {
 	option1VoteText.textContent = option1Name;
 	option2VoteText.textContent = option2Name;
 
-	const pollEl = renderPollEl(question, option1Name, option2Name, option1Votes, option2Votes);
+	const pollEl = renderPoll(question, option1Name, option2Name, option1Votes, option2Votes);
 
 	pollEl.classList.add('current');
 	currentPollDestination.append(pollEl);
@@ -102,8 +103,10 @@ function displayCurrentPoll() {
 function displayAllPolls() {
 	pastPollsArray.textContent = '';
 
-	for (let poll of pastPollEl) {
-		const pollsEl = renderP
+	for (let poll of pastPollsEl) {
+		const pollsEl = renderPoll(poll.question, poll.option1Name, poll.option2Name, poll.option1Votes, poll.option2Votes);
+		pollsEl.classList.add('current');
+		pastPollsEl.append(pollsEl);
 	}
 }
 
