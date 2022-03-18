@@ -1,7 +1,7 @@
 // import functions and grab DOM elements
 import { renderPoll } from './render-utils.js';
 
-const currentGameEl = document.getElementById('current-poll-container');
+const currentPollEl = document.getElementById('current-poll-container');
 const startPollButton = document.getElementById('start-poll');
 
 const option1Input = document.getElementById('option1');
@@ -90,23 +90,25 @@ finishPollButton.addEventListener('click', () => {
 
 
 function displayCurrentPoll() {
-	currentPollDestination.textContent = '';
+	currentPollEl.textContent = '';
 
-	//option1VoteText.textContent = option1Name;
-	//option2VoteText.textContent = option2Name;
+	option1Label.textContent = option1Name;
+	option2Label.textContent = option2Name;
 
 	const pollEl = renderPoll(question, option1Name, option2Name, option1Votes, option2Votes);
 
 	//pollEl.classList.add('current');
-	currentPollDestination.append(pollEl);
+	currentPollEl.append(pollEl);
 }
+
 
 function displayAllPolls() {
 	pastPollsArray.textContent = '';
 
 	for (let poll of pastPollsEl) {
+
 		const pollsEl = renderPoll(poll.question, poll.option1Name, poll.option2Name, poll.option1Votes, poll.option2Votes);
-		//pollsEl.classList.add('current');
+		pollsEl.classList.add('current');
 		pastPollsEl.append(pollsEl);
 	}
 }
