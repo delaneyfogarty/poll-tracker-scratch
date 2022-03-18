@@ -22,46 +22,52 @@
 		<section class="main-section">
 			<div class="poll-form">
 				<h2>Make A Poll!</h2>
-				<form class="form">
+				<div id="current-poll-container">
+
+				</div>
+
+				<div class="poll-form"></div>
 					<label>
 						Question:
-						<input class="question-input" />
+						<input class="question-input"/>
 					</label>
 					<label>
 						Option One:
-						<input class="option1-name" />
+						<input class="option1" />
 					</label>
 					<label>
 						Option Two:
-						<input class="option2-name" />
+						<input class="option2" />
 					</label>
 					<button id="start-poll">Start Poll</button>
-				</form>
 			</div>
+
 			<div class="current-poll">
 				<h1>Current Poll:</h1>
-				<div id="current-poll-destination">
-					<p> Vote <span id="option1-vote-text"></span></p>
-					<div>
+				<div id="left-buttons">
+					<h3 id="option1-name">Option 1</h3>
 						<button id="option1-add">+</button>
 						<button id="option1-sub">-</button>
 					</div>
-					<p> Vote <span id="option2-vote-text"></span></p>
-					<div>
+					<div id="right-buttons">
+						<h3 id="option2-name">Option 2</h3>
 						<button id="option2-add">+</button>
 						<button id="option2-sub">-</button>
 					</div>
 				</div>
-			</div>
+
+				<div id="bottom-button">
 			<button id="finish-poll">Finish Poll</button>
 			</div>
 
 
-			</div>
-			<h2> Past Games </h2>
 			<div class="past-polls">
+				<h2> Past Games </h2>
 			</div>
+
+
 		</section>
+
 	</main>
 	<footer>
 		<div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>

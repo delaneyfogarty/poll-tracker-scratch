@@ -4,6 +4,8 @@ export function renderPoll(question, option1Name, option2Name, option1Votes, opt
 	const option1Div = renderOption(option1Name, option1Votes);
 	const option2Div = renderOption(option2Name, option2Votes);
 
+
+	// text content 
 	div.append(questionEl, option1Div, option2Div);
 
 	div.classList.add('poll');

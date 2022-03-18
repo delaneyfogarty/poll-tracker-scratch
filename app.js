@@ -1,17 +1,22 @@
 // import functions and grab DOM elements
 import { renderPoll } from './render-utils.js';
 
-const form = document.querySelector('form');
-const currentPollDestination = document.getElementById('current-poll-destination');
-const option1VoteText = document.getElementById('option1-vote-text');
-const option2VoteText = document.getElementById('option2-vote-text');
+const currentGameEl = document.getElementById('current-poll-container');
+const startPollButton = document.getElementById('start-poll');
+
+const option1Input = document.getElementById('option1');
+const option2Input = document.getElementById('option2');
+const questionInput = document.getElementById('question-input');
+
+const option1Label = document.getElementById('option1-name');
+const option2Label = document.getElementById('option2-name');
+
 const option1AddButton = document.getElementById('option1-add');
 const option2AddButton = document.getElementById('option2-add');
 const option1SubButton = document.getElementById('option1-sub');
 const option2SubButton = document.getElementById('option2-sub');
+
 const finishPollButton = document.getElementById('finish-poll');
-
-
 const pastPollsEl = document.querySelector('past-polls');
 
 // let state
@@ -23,7 +28,7 @@ let option2Votes = 0;
 
 const pastPollsArray = [];
 
-// set event listeners 
+// set event listeners
 option1AddButton.addEventListener('click', () => {
 	option1Votes++;
 	displayCurrentPoll();
@@ -49,7 +54,7 @@ form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const data = new FormData(form);
 
-	
+
 	question = data.get('question-input');
 	option1Name = data.get('option1-name');
 	option2Name = data.get('option2-name');
