@@ -4,9 +4,9 @@ import { renderPoll } from './render-utils.js';
 const currentPollEl = document.getElementById('current-poll-container');
 const startPollButton = document.getElementById('start-poll');
 
-const option1Input = document.getElementById('option1');
-const option2Input = document.getElementById('option2');
-const questionInput = document.getElementById('question-input');
+// const option1Input = document.getElementById('option1');
+// const option2Input = document.getElementById('option2');
+// const questionInput = document.getElementById('question-input');
 
 const option1Label = document.getElementById('option1-name');
 const option2Label = document.getElementById('option2-name');
@@ -51,9 +51,9 @@ option2SubButton.addEventListener('click', () => {
 });
 
 startPollButton.addEventListener('click', () => {
-		let questionInput = document.querySelector('.question-input');
-		let option1Input = document.querySelector('.option1');
-		let option2Input = document.querySelector('.option2');
+    let questionInput = document.querySelector('.question-input');
+    let option1Input = document.querySelector('.option1');
+    let option2Input = document.querySelector('.option2');
 
 
     question = questionInput.value;
@@ -71,7 +71,7 @@ startPollButton.addEventListener('click', () => {
 finishPollButton.addEventListener('click', () => {
 
 
-			const currentPoll = {
+    const currentPoll = {
         question: question,
         option1Name: option1Name,
         option2Name: option2Name,
@@ -83,14 +83,14 @@ finishPollButton.addEventListener('click', () => {
     pastPollsArray.push(currentPoll);
 
 
-			question = '';
-	option1Name = '';
-	option2Name = '';
-	option1Votes = 0;
-	option2Votes = 0;
-;
-    displayCurrentPoll();
-		displayAllPolls();
+    question = '';
+    option1Name = '';
+    option2Name = '';
+    option1Votes = 0;
+    option2Votes = 0;
+
+    // displayCurrentPoll();
+    displayAllPolls();
 
 });
 
@@ -109,7 +109,7 @@ function displayCurrentPoll() {
 
 
 function displayAllPolls() {
-    pastPollsArray.textContent = '';
+    pastPollsEl.textContent = '';
 
     for (let poll of pastPollsArray) {
 
