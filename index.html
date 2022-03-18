@@ -20,30 +20,37 @@
 	</header>
 	<main>
 		<section class="main-section">
+
 			<div class="poll-form">
-				<h2>Make A Poll!</h2>
-				<div id="current-poll-container">
 
-				</div>
-
+				<h1>Current Poll:</h1>
 				<div class="poll-form"></div>
 					<label>
-						Question:
+						Question: <br>
 						<input class="question-input"/>
 					</label>
+					<br>
 					<label>
-						Option One:
-						<input class="option1" />
+						Option One: <br>
+						<input class="option1"/>
 					</label>
+					<br>
 					<label>
-						Option Two:
-						<input class="option2" />
+						Option Two: <br>
+						<input class="option2"/>
 					</label>
+					<br>
 					<button id="start-poll">Start Poll</button>
 			</div>
 
+			<div id="current-poll-container">
+
+
+			</div>
+
+
 			<div class="current-poll">
-				<h1>Current Poll:</h1>
+
 				<div id="left-buttons">
 					<label>
 						Option 1:
@@ -60,16 +67,19 @@
 						<button id="option2-add">+</button>
 						<button id="option2-sub">-</button>
 					</div>
+					<div id="bottom-button">
+						<button id="finish-poll">Finish Poll</button>
+						</div>
 				</div>
 
-				<div id="bottom-button">
-			<button id="finish-poll">Finish Poll</button>
-			</div>
+				<div class="past-polls-container">
 
+					<h2> Past Polls </h2>
+				</div>
 
 			<div class="past-polls">
-				<h2> Past Polls </h2>
 			</div>
+		</div>
 
 
 		</section>

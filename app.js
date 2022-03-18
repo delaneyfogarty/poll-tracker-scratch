@@ -103,7 +103,7 @@ function displayCurrentPoll() {
 
     const pollEl = renderPoll(question, option1Name, option2Name, option1Votes, option2Votes);
 
-	//pollEl.classList.add('current');
+    pollEl.classList.add('poll');
     currentPollEl.append(pollEl);
 }
 
