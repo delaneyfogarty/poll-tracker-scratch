@@ -89,7 +89,7 @@ finishPollButton.addEventListener('click', () => {
     option1Votes = 0;
     option2Votes = 0;
 
-    // displayCurrentPoll();
+    displayCurrentPoll();
     displayAllPolls();
 
 });
