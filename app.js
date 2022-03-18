@@ -50,50 +50,44 @@ option2SubButton.addEventListener('click', () => {
 	displayCurrentPoll();
 });
 
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	const data = new FormData(form);
+startPollButton.addEventListener('click', () => {
+
+question = questionInput.value;
+option1Name = option1Input.value;
+option2Name = option2Input.value;
 
 
-	question = data.get('question-input');
-	option1Name = data.get('option1-name');
-	option2Name = data.get('option2-name');
+questionInput.value = '';
+option1Input.value = '';
+option2Input.value = '';
 
-
-	displayCurrentPoll();
+displayCurrentPoll();
 });
 
 finishPollButton.addEventListener('click', () => {
-	form.reset();
 
-	const poll = makePoll();
-
-	pastPollsArray.push(poll);
-
-	displayAllPolls();
-	resetState();
-	displayCurrentPoll();
-
-});
-
-function makePoll() {
-
-	return {
+	const currentPoll = {
 		question: question,
 		option1Name: option1Name,
 		option2Name: option2Name,
 		option1Votes: option1Votes,
-		option2Votes: option2Votes
-	};
-}
+		option2Votes: option2Votes,
+	}
 
-function resetState() {
+	pastPollsArray.push(currentPoll);
+
+	displayAllPolls();
+
 	question = '';
 	option1Name = '';
-	option2Name = '';
+  option2Name = '';
 	option1Votes = 0;
 	option2Votes = 0;
-}
+
+	displayCurrentPoll();
+
+});
+
 
 function displayCurrentPoll() {
 	currentPollDestination.textContent = '';
